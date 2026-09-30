@@ -11,8 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
 <script>function fb(i){i.onerror=null;var s=i.getAttribute('src');if(s.indexOf('assets/')===0){i.onerror=function(){i.remove()};i.src=s.slice(7)}else i.remove()}</script>
 <style>
-:root{--bg:#F5F6FA;--fg:#141A2E;--mute:#5B637A;--line:#DDE0EA;--accent:#B45F00}
-@media (prefers-color-scheme:dark){:root{--bg:#0B1020;--fg:#E8EBF5;--mute:#8F98B3;--line:#1E2740;--accent:#F0A040}}
+:root{color-scheme:dark;--bg:#000;--fg:#F3EFFA;--mute:#9A93AD;--line:#2A1F3D;--accent:#F0359E;--violet:#A66BFF}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font:400 1rem/1.7 Sora,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -20,7 +19,7 @@ a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:.25em}
 a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .wrap{max-width:980px;margin:0 auto;padding:0 1.5rem}
-header.hero{position:relative;height:min(78vh,660px);min-height:420px;border-bottom:1px solid var(--line);overflow:hidden}
+header.hero{background:radial-gradient(60% 90% at 75% 35%,rgba(166,107,255,.22),transparent 70%),radial-gradient(40% 60% at 20% 90%,rgba(240,53,158,.14),transparent 70%);position:relative;height:min(78vh,660px);min-height:420px;border-bottom:1px solid var(--line);overflow:hidden}
 #sky{position:absolute;inset:0;width:100%;height:100%}
 nav{position:absolute;top:0;left:0;right:0;padding-top:1.5rem;display:flex;justify-content:flex-end;gap:1.75rem;font-size:.875rem;color:var(--mute)}
 nav a{text-decoration:none}
@@ -111,7 +110,7 @@ footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--line);colo
         <p>Executive dashboard presented at Intermoda 2025, highlighting sales trends by line and category, and inventory distribution.</p>
         <a href="https://github.com/bryan-o-orellana/Summary_KKAA_2025_Intermoda">View repository</a>
       </div>
-      <figure class="media"><img src="assets/summary-2025.png" alt="Summary KKAA 2025 dashboard demo" loading="lazy" onerror="fb(this)"></figure>
+      <figure class="media"><img src="assets/summary-2025.gif" alt="Summary KKAA 2025 dashboard demo" loading="lazy" onerror="fb(this)"></figure>
     </article>
 
     <article class="proj" id="p3">
@@ -145,7 +144,7 @@ footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--line);colo
         <p>An exercise using the Northwind datasets to explore sales insights.</p>
         <a href="https://github.com/bryan-o-orellana/Northwind-SQL-project">View repository</a>
       </div>
-      <figure class="media"><img src="assets/northwind.png" alt="Northwind SQL analysis preview" loading="lazy" onerror="fb(this)"></figure>
+      <figure class="media"><img src="assets/northwind.gif" alt="Northwind SQL analysis preview" loading="lazy" onerror="fb(this)"></figure>
     </article>
 
     <p class="cat">Forecasting</p>
@@ -157,7 +156,7 @@ footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--line);colo
         <p>Real-world sales projections built for Intermoda S.A.</p>
         <a href="https://github.com/bryan-o-orellana/Sales_Forecasting">View repository</a>
       </div>
-      <figure class="media"><img src="assets/forecasting.png" alt="Sales forecasting preview" loading="lazy" onerror="fb(this)"></figure>
+      <figure class="media"><img src="assets/forecasting.gif" alt="Sales forecasting preview" loading="lazy" onerror="fb(this)"></figure>
     </article>
   </section>
 
@@ -194,30 +193,30 @@ const up=document.querySelector('.up');addEventListener('scroll',()=>up.classLis
   function size(){
     const r=hero.getBoundingClientRect();w=r.width;h=r.height;
     c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);
-    pts=Array.from({length:Math.round(w*h/9000)},(_,i)=>({x:Math.random()*w,y:Math.random()*h,
-      vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,r:Math.random()*1.1+.4,a:i%14===0}));
+    pts=Array.from({length:Math.round(w*h/10000)},(_,i)=>({x:Math.random()*w,y:Math.random()*h,
+      vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,r:Math.random()*1.4+1,c:i%3}));
     m={x:w*.72,y:h*.4};
   }
   function frame(){
-    fg=css('--fg');ac=css('--accent');x.clearRect(0,0,w,h);
+    fg=css('--fg');ac=css('--accent');const cols=[fg,ac,css('--violet')];x.clearRect(0,0,w,h);
     if(!rm)for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1}
-    x.lineWidth=.7;
+    x.lineWidth=1.5;
     for(let i=0;i<pts.length;i++){
       const a=pts[i],da=Math.hypot(a.x-m.x,a.y-m.y);
-      if(da>190)continue;
+      if(da>260)continue;
       for(let j=i+1;j<pts.length;j++){
         const b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-        if(d<95&&Math.hypot(b.x-m.x,b.y-m.y)<190){
-          x.strokeStyle=ac;x.globalAlpha=(1-d/95)*(1-da/190)*.9;
+        if(d<130&&Math.hypot(b.x-m.x,b.y-m.y)<260){
+          x.strokeStyle=cols[a.c||b.c||2];x.globalAlpha=(1-d/130)*(1-da/260);
           x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();
         }
       }
     }
     for(const p of pts){
-      x.globalAlpha=p.a?.95:.5;x.fillStyle=p.a?ac:fg;
-      x.beginPath();x.arc(p.x,p.y,p.a?p.r+.6:p.r,0,6.283);x.fill();
+      x.globalAlpha=p.c?.95:.8;x.fillStyle=x.shadowColor=cols[p.c];x.shadowBlur=p.c?14:6;
+      x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill();
     }
-    x.globalAlpha=1;
+    x.globalAlpha=1;x.shadowBlur=0;
     if(!rm)requestAnimationFrame(frame);
   }
   hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();m={x:e.clientX-r.left,y:e.clientY-r.top};if(rm)frame()});
