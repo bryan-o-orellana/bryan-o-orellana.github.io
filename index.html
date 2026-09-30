@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bryan Orellana · Business Intelligence & Data Analyst</title>
+<meta name="description" content="Portfolio of Bryan Orellana: dashboards, forecasting, SQL and AI tools that turn business data into decisions.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F6FA;--fg:#141A2E;--mute:#5B637A;--line:#DDE0EA;--accent:#B45F00}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1020;--fg:#E8EBF5;--mute:#8F98B3;--line:#1E2740;--accent:#F0A040}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 1rem/1.7 Sora,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:.25em}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 1.5rem}
+header.hero{position:relative;height:min(92vh,760px);min-height:520px;border-bottom:1px solid var(--line);overflow:hidden}
+#sky{position:absolute;inset:0;width:100%;height:100%}
+nav{position:absolute;top:0;left:0;right:0;padding-top:1.5rem;display:flex;justify-content:flex-end;gap:1.75rem;font-size:.875rem;color:var(--mute)}
+nav a{text-decoration:none}
+.hero .wrap{position:absolute;left:0;right:0;bottom:3.5rem;pointer-events:none}
+.hero a{pointer-events:auto}
+h1{font-weight:300;font-size:clamp(2.6rem,8vw,5.5rem);line-height:1.02;letter-spacing:-.03em}
+.role{margin-top:1.25rem;font-size:1.125rem;font-weight:600}
+.lead{margin-top:.5rem;color:var(--mute);max-width:34rem}
+section{padding:5rem 0 0}
+h2{font-weight:600;font-size:1.5rem;letter-spacing:-.01em;margin-bottom:.5rem}
+h3{font-weight:600;font-size:1.125rem}
+.cat{margin-top:3.5rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.875rem;color:var(--mute)}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;padding:2rem 0}
+.proj+.proj{border-top:1px solid var(--line)}
+.proj .tag{font-size:.8125rem;color:var(--accent)}
+.proj p{margin:.5rem 0 1rem;color:var(--mute);max-width:30rem}
+.media{position:relative;aspect-ratio:16/10;border:1px dashed var(--line);border-radius:6px;display:grid;place-items:center;color:var(--mute);font-size:.8125rem;overflow:hidden}
+.media::before{content:"Demo coming soon"}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px}
+.about p{max-width:38rem;color:var(--mute);margin-top:1rem}
+.tools{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.tools li{list-style:none;border:1px solid var(--line);border-radius:999px;padding:.2rem .85rem;font-size:.875rem}
+.contact ul{margin-top:1rem;padding:0;list-style:none}
+.contact li+li{margin-top:.25rem}
+footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);font-size:.8125rem}
+@media (max-width:720px){.proj{grid-template-columns:1fr;gap:1.25rem}.hero .wrap{bottom:2.5rem}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <nav class="wrap" aria-label="Sections">
+    <a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="wrap">
+    <h1>Bryan<br>Orellana</h1>
+    <p class="role">Business Intelligence & Data Analyst</p>
+    <p class="lead">I turn sales, inventory and operations data into clear insights and better decisions.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="projects">
+    <h2>Projects</h2>
+    <p style="color:var(--mute)">Dashboards, forecasts and tools built for real business questions.</p>
+
+    <p class="cat">Power BI</p>
+
+    <article class="proj">
+      <div>
+        <span class="tag">Intermoda</span>
+        <h3>Sell Out & Inventories</h3>
+        <p>Comprehensive analysis of sales and inventory performance for the fashion brand PEPE.</p>
+        <!-- Add the result here: what changed thanks to this dashboard? -->
+        <a href="https://github.com/bryan-o-orellana/Sell_Out_and_Inventories_KKAA">View repository</a>
+      </div>
+      <figure class="media"><img src="assets/sell-out.gif" alt="Sell Out & Inventories dashboard demo" loading="lazy" onerror="this.remove()"></figure>
+    </article>
+
+    <article class="proj">
+      <div>
+        <span class="tag">Intermoda</span>
+        <h3>Summary KKAA 2025</h3>
+        <p>Executive dashboard presented at Intermoda 2025, highlighting sales trends by line and category, and inventory distribution.</p>
+        <a href="https://github.com/bryan-o-orellana/Summary_KKAA_2025_Intermoda">View repository</a>
+      </div>
+      <figure class="media"><img src="assets/summary-2025.gif" alt="Summary KKAA 2025 dashboard demo" loading="lazy" onerror="this.remove()"></figure>
+    </article>
+
+    <article class="proj">
+      <div>
+        <span class="tag">Intermoda · Design Department</span>
+        <h3>Performance by Design</h3>
+        <p>Built so the Design Department could see which product styles perform well and which do not.</p>
+        <a href="https://github.com/bryan-o-orellana/performance_by_design">View repository</a>
+      </div>
+      <figure class="media"><img src="assets/performance-by-design.gif" alt="Performance by Design dashboard demo" loading="lazy" onerror="this.remove()"></figure>
+    </article>
+
+    <p class="cat">Claude AI</p>
+
+    <article class="proj">
+      <div>
+        <span class="tag">Intermoda · Trade Marketing</span>
+        <h3>Perfect Store Evaluation</h3>
+        <p>A web application that digitizes, centralizes and simplifies the monthly Perfect Store Evaluation, used to assess brand execution across retail stores.</p>
+        <a href="https://github.com/bryan-o-orellana/Tienda-Perfecta">View repository</a>
+      </div>
+      <figure class="media"><img src="assets/perfect-store.gif" alt="Perfect Store Evaluation app demo" loading="lazy" onerror="this.remove()"></figure>
+    </article>
+
+    <p class="cat">SQL</p>
+
+    <article class="proj">
+      <div>
+        <span class="tag">Practice project</span>
+        <h3>Northwind SQL</h3>
+        <p>An exercise using the Northwind datasets to explore sales insights.</p>
+        <a href="https://github.com/bryan-o-orellana/Northwind-SQL-project">View repository</a>
+      </div>
+      <figure class="media"><img src="assets/northwind.png" alt="Northwind SQL analysis preview" loading="lazy" onerror="this.remove()"></figure>
+    </article>
+
+    <p class="cat">Forecasting</p>
+
+    <article class="proj">
+      <div>
+        <span class="tag">Intermoda · Forecast Pro</span>
+        <h3>Sales Forecasting</h3>
+        <p>Real-world sales projections built for Intermoda S.A.</p>
+        <a href="https://github.com/bryan-o-orellana/Sales_Forecasting">View repository</a>
+      </div>
+      <figure class="media"><img src="assets/forecasting.png" alt="Sales forecasting preview" loading="lazy" onerror="this.remove()"></figure>
+    </article>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>I am a Business Intelligence Analyst at Intermoda S.A., where I design dashboards, automate reports and support decisions across departments. My work combines data analytics, business insight and technical skill, always aiming to simplify data so it has real impact.</p>
+    <ul class="tools" aria-label="Tools">
+      <li>Power BI</li><li>Excel</li><li>SQL</li><li>Power Query</li><li>Python</li><li>Tableau</li><li>Forecast Pro</li><li>Claude & AI</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="mailto:bryan.o.orellana@icloud.com">bryan.o.orellana@icloud.com</a></li>
+      <li><a href="https://linkedin.com/in/bryanxavez">LinkedIn</a></li>
+      <li><a href="https://github.com/bryan-o-orellana">GitHub</a></li>
+    </ul>
+  </section>
+
+  <footer>© <span id="yr"></span> Bryan Orellana</footer>
+</main>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(()=>{
+  const hero=document.querySelector('.hero'),c=document.getElementById('sky'),x=c.getContext('2d');
+  const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w,h,pts=[],m={x:0,y:0},dpr=Math.min(devicePixelRatio||1,2),fg,ac;
+  const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  function size(){
+    const r=hero.getBoundingClientRect();w=r.width;h=r.height;
+    c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    pts=Array.from({length:Math.round(w*h/9000)},(_,i)=>({x:Math.random()*w,y:Math.random()*h,
+      vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,r:Math.random()*1.1+.4,a:i%14===0}));
+    m={x:w*.72,y:h*.4};
+  }
+  function frame(){
+    fg=css('--fg');ac=css('--accent');x.clearRect(0,0,w,h);
+    if(!rm)for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1}
+    x.lineWidth=.7;
+    for(let i=0;i<pts.length;i++){
+      const a=pts[i],da=Math.hypot(a.x-m.x,a.y-m.y);
+      if(da>190)continue;
+      for(let j=i+1;j<pts.length;j++){
+        const b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<95&&Math.hypot(b.x-m.x,b.y-m.y)<190){
+          x.strokeStyle=ac;x.globalAlpha=(1-d/95)*(1-da/190)*.9;
+          x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();
+        }
+      }
+    }
+    for(const p of pts){
+      x.globalAlpha=p.a?.95:.5;x.fillStyle=p.a?ac:fg;
+      x.beginPath();x.arc(p.x,p.y,p.a?p.r+.6:p.r,0,6.283);x.fill();
+    }
+    x.globalAlpha=1;
+    if(!rm)requestAnimationFrame(frame);
+  }
+  hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();m={x:e.clientX-r.left,y:e.clientY-r.top};if(rm)frame()});
+  addEventListener('resize',()=>{size();if(rm)frame()});
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(rm)frame()});
+  size();frame();
+})();
+</script>
+</body>
+</html>
