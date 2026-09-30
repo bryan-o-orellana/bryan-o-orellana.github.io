@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bryan Orellana · Business Intelligence & Data Analyst</title>
 <meta name="description" content="Portfolio of Bryan Orellana: dashboards, forecasting, SQL and AI tools that turn business data into decisions.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪐</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+<script>function fb(i){i.onerror=null;var s=i.getAttribute('src');if(s.indexOf('assets/')===0){i.onerror=function(){i.remove()};i.src=s.slice(7)}else i.remove()}</script>
 <style>
 :root{--bg:#F5F6FA;--fg:#141A2E;--mute:#5B637A;--line:#DDE0EA;--accent:#B45F00}
 @media (prefers-color-scheme:dark){:root{--bg:#0B1020;--fg:#E8EBF5;--mute:#8F98B3;--line:#1E2740;--accent:#F0A040}}
@@ -19,13 +20,13 @@ a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:.25em}
 a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .wrap{max-width:980px;margin:0 auto;padding:0 1.5rem}
-header.hero{position:relative;height:min(92vh,760px);min-height:520px;border-bottom:1px solid var(--line);overflow:hidden}
+header.hero{position:relative;height:min(78vh,660px);min-height:420px;border-bottom:1px solid var(--line);overflow:hidden}
 #sky{position:absolute;inset:0;width:100%;height:100%}
 nav{position:absolute;top:0;left:0;right:0;padding-top:1.5rem;display:flex;justify-content:flex-end;gap:1.75rem;font-size:.875rem;color:var(--mute)}
 nav a{text-decoration:none}
 .hero .wrap{position:absolute;left:0;right:0;bottom:3.5rem;pointer-events:none}
 .hero a{pointer-events:auto}
-h1{font-weight:300;font-size:clamp(2.6rem,8vw,5.5rem);line-height:1.02;letter-spacing:-.03em}
+h1{font-weight:300;font-size:clamp(2.1rem,7vw,4.5rem);line-height:1.02;letter-spacing:-.03em}
 .role{margin-top:1.25rem;font-size:1.125rem;font-weight:600}
 .lead{margin-top:.5rem;color:var(--mute);max-width:34rem}
 section{padding:5rem 0 0}
@@ -45,7 +46,29 @@ h3{font-weight:600;font-size:1.125rem}
 .contact ul{margin-top:1rem;padding:0;list-style:none}
 .contact li+li{margin-top:.25rem}
 footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);font-size:.8125rem}
-@media (max-width:720px){.proj{grid-template-columns:1fr;gap:1.25rem}.hero .wrap{bottom:2.5rem}}
+@media (max-width:720px){.proj{grid-template-columns:1fr;gap:1.25rem}.hero .wrap{bottom:2rem}header.hero{height:54vh;min-height:360px}.role{font-size:1rem}.planet{width:110px}}
+
+.map{margin-top:2.5rem;overflow-x:auto}
+.map svg{display:block;min-width:640px;width:100%;height:auto}
+.map .ln{stroke:var(--line);stroke-width:1.5;fill:none}
+.map .ln.s{stroke:var(--accent);opacity:.7}
+.map .st{fill:var(--accent);transition:r .2s}
+.map .halo{fill:var(--accent);opacity:0;transition:opacity .2s}
+.map a:hover .halo,.map a:focus-visible .halo{opacity:.18}
+.map a:hover .st{r:7}
+.map text{fill:var(--fg);font:400 15px Sora,system-ui,sans-serif}
+.map .k{fill:var(--mute);font-size:13px}
+.planet{float:right;width:150px;margin:0 0 1rem 1.5rem;color:var(--accent)}
+.planet *{fill:none;stroke:currentColor;stroke-width:1.5}
+.planet .body{fill:var(--bg)}
+.planet .moon{fill:currentColor;stroke:none}
+.orbit{transform-box:fill-box;transform-origin:center;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.up{position:fixed;right:1.25rem;bottom:1.25rem;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--bg);color:var(--fg);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .25s,transform .25s}
+.up.on{opacity:1;pointer-events:auto;transform:none}
+.up svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.up:hover{color:var(--accent);border-color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.orbit{animation:none}.up{transition:none}}
 </style>
 </head>
 <body>
@@ -66,10 +89,11 @@ footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--line);colo
   <section id="projects">
     <h2>Projects</h2>
     <p style="color:var(--mute)">Dashboards, forecasts and tools built for real business questions.</p>
+    <div class="map"><svg viewBox="0 0 900 270" aria-label="Project map: each star is a project"><path class="ln s" d="M110 110L260 190L410 100"/><path class="ln" d="M410 100L560 180L700 90L810 200"/><text class="k" x="260" y="150" text-anchor="middle">Power BI</text><text class="k" x="560" y="145" text-anchor="middle">Claude AI</text><text class="k" x="700" y="52" text-anchor="middle">SQL</text><text class="k" x="810" y="165" text-anchor="middle">Forecast Pro</text><a href="#p1"><circle class="halo" cx="110" cy="110" r="20"/><circle class="st" cx="110" cy="110" r="4.5"/><text x="110" y="144" text-anchor="middle">Sell Out</text></a><a href="#p2"><circle class="halo" cx="260" cy="190" r="20"/><circle class="st" cx="260" cy="190" r="4.5"/><text x="260" y="224" text-anchor="middle">Summary 2025</text></a><a href="#p3"><circle class="halo" cx="410" cy="100" r="20"/><circle class="st" cx="410" cy="100" r="4.5"/><text x="410" y="134" text-anchor="middle">Performance</text></a><a href="#p4"><circle class="halo" cx="560" cy="180" r="20"/><circle class="st" cx="560" cy="180" r="4.5"/><text x="560" y="214" text-anchor="middle">Perfect Store</text></a><a href="#p5"><circle class="halo" cx="700" cy="90" r="20"/><circle class="st" cx="700" cy="90" r="4.5"/><text x="700" y="124" text-anchor="middle">Northwind</text></a><a href="#p6"><circle class="halo" cx="810" cy="200" r="20"/><circle class="st" cx="810" cy="200" r="4.5"/><text x="810" y="234" text-anchor="middle">Forecasting</text></a></svg></div>
 
     <p class="cat">Power BI</p>
 
-    <article class="proj">
+    <article class="proj" id="p1">
       <div>
         <span class="tag">Intermoda</span>
         <h3>Sell Out & Inventories</h3>
@@ -77,67 +101,68 @@ footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--line);colo
         <!-- Add the result here: what changed thanks to this dashboard? -->
         <a href="https://github.com/bryan-o-orellana/Sell_Out_and_Inventories_KKAA">View repository</a>
       </div>
-      <figure class="media"><img src="assets/sell-out.gif" alt="Sell Out & Inventories dashboard demo" loading="lazy" onerror="this.remove()"></figure>
+      <figure class="media"><img src="assets/sell-out.gif" alt="Sell Out & Inventories dashboard demo" loading="lazy" onerror="fb(this)"></figure>
     </article>
 
-    <article class="proj">
+    <article class="proj" id="p2">
       <div>
         <span class="tag">Intermoda</span>
         <h3>Summary KKAA 2025</h3>
         <p>Executive dashboard presented at Intermoda 2025, highlighting sales trends by line and category, and inventory distribution.</p>
         <a href="https://github.com/bryan-o-orellana/Summary_KKAA_2025_Intermoda">View repository</a>
       </div>
-      <figure class="media"><img src="assets/summary-2025.gif" alt="Summary KKAA 2025 dashboard demo" loading="lazy" onerror="this.remove()"></figure>
+      <figure class="media"><img src="assets/summary-2025.png" alt="Summary KKAA 2025 dashboard demo" loading="lazy" onerror="fb(this)"></figure>
     </article>
 
-    <article class="proj">
+    <article class="proj" id="p3">
       <div>
         <span class="tag">Intermoda · Design Department</span>
         <h3>Performance by Design</h3>
         <p>Built so the Design Department could see which product styles perform well and which do not.</p>
         <a href="https://github.com/bryan-o-orellana/performance_by_design">View repository</a>
       </div>
-      <figure class="media"><img src="assets/performance-by-design.gif" alt="Performance by Design dashboard demo" loading="lazy" onerror="this.remove()"></figure>
+      <figure class="media"><img src="assets/performance-by-design.gif" alt="Performance by Design dashboard demo" loading="lazy" onerror="fb(this)"></figure>
     </article>
 
     <p class="cat">Claude AI</p>
 
-    <article class="proj">
+    <article class="proj" id="p4">
       <div>
         <span class="tag">Intermoda · Trade Marketing</span>
         <h3>Perfect Store Evaluation</h3>
         <p>A web application that digitizes, centralizes and simplifies the monthly Perfect Store Evaluation, used to assess brand execution across retail stores.</p>
         <a href="https://github.com/bryan-o-orellana/Tienda-Perfecta">View repository</a>
       </div>
-      <figure class="media"><img src="assets/perfect-store.gif" alt="Perfect Store Evaluation app demo" loading="lazy" onerror="this.remove()"></figure>
+      <figure class="media"><img src="assets/perfect-store.gif" alt="Perfect Store Evaluation app demo" loading="lazy" onerror="fb(this)"></figure>
     </article>
 
     <p class="cat">SQL</p>
 
-    <article class="proj">
+    <article class="proj" id="p5">
       <div>
         <span class="tag">Practice project</span>
         <h3>Northwind SQL</h3>
         <p>An exercise using the Northwind datasets to explore sales insights.</p>
         <a href="https://github.com/bryan-o-orellana/Northwind-SQL-project">View repository</a>
       </div>
-      <figure class="media"><img src="assets/northwind.gif" alt="Northwind SQL analysis preview" loading="lazy" onerror="this.remove()"></figure>
+      <figure class="media"><img src="assets/northwind.png" alt="Northwind SQL analysis preview" loading="lazy" onerror="fb(this)"></figure>
     </article>
 
     <p class="cat">Forecasting</p>
 
-    <article class="proj">
+    <article class="proj" id="p6">
       <div>
         <span class="tag">Intermoda · Forecast Pro</span>
         <h3>Sales Forecasting</h3>
         <p>Real-world sales projections built for Intermoda S.A.</p>
         <a href="https://github.com/bryan-o-orellana/Sales_Forecasting">View repository</a>
       </div>
-      <figure class="media"><img src="assets/forecasting.gif" alt="Sales forecasting preview" loading="lazy" onerror="this.remove()"></figure>
+      <figure class="media"><img src="assets/forecasting.png" alt="Sales forecasting preview" loading="lazy" onerror="fb(this)"></figure>
     </article>
   </section>
 
   <section id="about" class="about">
+    <svg class="planet" viewBox="0 0 150 150" aria-hidden="true"><g class="orbit"><circle cx="75" cy="75" r="70" stroke-dasharray="2 5" opacity=".6"/><circle class="moon" cx="75" cy="5" r="4"/></g><g transform="rotate(-22 75 75)"><ellipse cx="75" cy="75" rx="50" ry="11"/></g><circle class="body" cx="75" cy="75" r="30"/><g transform="rotate(-22 75 75)"><path d="M25 75a50 11 0 0 0 100 0"/></g></svg>
     <h2>About</h2>
     <p>I am a Business Intelligence Analyst at Intermoda S.A., where I design dashboards, automate reports and support decisions across departments. My work combines data analytics, business insight and technical skill, always aiming to simplify data so it has real impact.</p>
     <ul class="tools" aria-label="Tools">
@@ -157,8 +182,10 @@ footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--line);colo
   <footer>© <span id="yr"></span> Bryan Orellana</footer>
 </main>
 
+<a class="up" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 2c3 3 4.5 7 4.5 11l-2 2h-5l-2-2C7.5 9 9 5 12 2z"/><path d="M7.5 13l-3 3v3l4-2M16.5 13l3 3v3l-4-2"/><circle cx="12" cy="9" r="1.6"/></svg></a>
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
+const up=document.querySelector('.up');addEventListener('scroll',()=>up.classList.toggle('on',scrollY>500),{passive:true});
 (()=>{
   const hero=document.querySelector('.hero'),c=document.getElementById('sky'),x=c.getContext('2d');
   const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
